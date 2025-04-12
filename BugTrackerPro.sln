@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugTrackerPro.API", "BugTrackerPro.API\BugTrackerPro.API.csproj", "{06668697-D5F6-449E-B977-EB712BD906D5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C2F24E08-0978-438F-A731-9419A1D44DB2} = {C2F24E08-0978-438F-A731-9419A1D44DB2}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugTrackerPro.DAL", "BugTrackerPro.DAL\BugTrackerPro.DAL.csproj", "{08014ECB-28FC-40F5-B89C-8DFB230CECAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugTrackerPro.BL", "BugTrackerPro.BL\BugTrackerPro.BL.csproj", "{C2F24E08-0978-438F-A731-9419A1D44DB2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{08014ECB-28FC-40F5-B89C-8DFB230CECAC} = {08014ECB-28FC-40F5-B89C-8DFB230CECAC}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06668697-D5F6-449E-B977-EB712BD906D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06668697-D5F6-449E-B977-EB712BD906D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06668697-D5F6-449E-B977-EB712BD906D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06668697-D5F6-449E-B977-EB712BD906D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08014ECB-28FC-40F5-B89C-8DFB230CECAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08014ECB-28FC-40F5-B89C-8DFB230CECAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08014ECB-28FC-40F5-B89C-8DFB230CECAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08014ECB-28FC-40F5-B89C-8DFB230CECAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2F24E08-0978-438F-A731-9419A1D44DB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2F24E08-0978-438F-A731-9419A1D44DB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2F24E08-0978-438F-A731-9419A1D44DB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2F24E08-0978-438F-A731-9419A1D44DB2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

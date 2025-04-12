@@ -13,8 +13,6 @@ public class UserConfigration : IEntityTypeConfiguration<User>
     
     public void Configure(EntityTypeBuilder<User> builder)
     {
-        builder.HasMany(u => u.AssignedBugs)
-                  .WithMany(b => b.Assignees)
-                  .UsingEntity(j => j.ToTable("BugAssignees"));
+
     }
 }

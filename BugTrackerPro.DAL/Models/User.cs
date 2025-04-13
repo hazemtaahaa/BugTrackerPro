@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -14,5 +14,5 @@ namespace BugTrackerPro.DAL;
 
 public class User :IdentityUser<Guid>
 {
-
+    public ICollection<BugAssignee> Assignees { get; set; }
 }

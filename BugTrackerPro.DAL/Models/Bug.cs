@@ -10,4 +10,5 @@ public class Bug
     public Project Project { get; set; }
     public ICollection<BugAssignee> Assignees { get; set; }
     public ICollection<Attachment> Attachments { get; set; }
+
 }

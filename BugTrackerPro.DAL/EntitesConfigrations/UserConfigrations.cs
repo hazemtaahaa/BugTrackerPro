@@ -8,11 +8,10 @@ using System.Threading.Tasks;
 
 namespace BugTrackerPro.DAL;
 
-public class UserConfigration : IEntityTypeConfiguration<User>
+public class UserConfigrations : IEntityTypeConfiguration<User>
 {
-    
     public void Configure(EntityTypeBuilder<User> builder)
     {
-
+        
     }
 }

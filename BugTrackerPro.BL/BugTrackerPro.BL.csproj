@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <ProjectReference Include="..\BugTrackerPro.DAL\BugTrackerPro.DAL.csproj" />
+  </ItemGroup>
+
 </Project>

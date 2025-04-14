@@ -1,8 +1,6 @@
-﻿using BugTrackerPro.DAL.Unit_Of_Work;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-
 
 namespace BugTrackerPro.DAL;
 
@@ -15,8 +13,5 @@ public static class DataAccessExtention
         services.AddScoped<IProjectRepository, ProjectRepository>();
         services.AddScoped<IBugRepository, BugRepository>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
-
     }
-
-
 }

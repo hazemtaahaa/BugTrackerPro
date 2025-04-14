@@ -1,3 +1,4 @@
+using BugTrackerPro.BL;
 using BugTrackerPro.DAL;
 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -13,6 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddDataAccessServices(builder.Configuration);
+builder.Services.AddBusinessLogicServices();
 
 builder.Services.AddIdentity<User, Role>(options =>
 {

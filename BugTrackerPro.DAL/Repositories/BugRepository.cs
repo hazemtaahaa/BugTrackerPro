@@ -15,9 +15,75 @@ public class BugRepository : IBugRepository
     {
         _context = context;
     }
-    public async void Add(Bug bug)
+
+    public async Task<List<Bug>> GetAllAsync()
     {
-      await _context.Set<Bug>().AddAsync(bug);
+        return await _context.Bugs.ToListAsync();
+    }
+
+    public async Task<List<Bug>> GetAllWithProjectAsync()
+    {
+        return await _context.Bugs
+            .Include(b => b.Project)
+            .ToListAsync();
+    }
+
+    public async Task<Bug> GetByIdAsync(Guid id)
+    {
+        return await _context.Bugs.FindAsync(id);
+    }
+
+    public async Task<Bug> GetByIdWithDetailsAsync(Guid id)
+    {
+        return await _context.Bugs
+            .Include(b => b.Project)
+            .Include(b => b.Assignees)
+                .ThenInclude(a => a.User)
+            .Include(b => b.Attachments)
+            .FirstOrDefaultAsync(b => b.Id == id);
+    }
+
+    public async Task<Bug> GetByIdWithAttachmentsAsync(Guid id)
+    {
+        return await _context.Bugs
+            .Include(b => b.Attachments)
+            .FirstOrDefaultAsync(b => b.Id == id);
+    }
+
+    public async Task AddAsync(Bug bug)
+    {
+        await _context.Bugs.AddAsync(bug);
+    }
+
+    public async Task<BugAssignee> GetAssignment(Guid bugId, Guid userId)
+    {
+        return await _context.Set<BugAssignee>()
+            .FirstOrDefaultAsync(a => a.BugId == bugId && a.UserId == userId);
+    }
+
+    public async Task AddAssignmentAsync(BugAssignee assignment)
+    {
+        await _context.Set<BugAssignee>().AddAsync(assignment);
+    }
+
+    public void RemoveAssignment(BugAssignee assignment)
+    {
+        _context.Set<BugAssignee>().Remove(assignment);
+    }
+
+    public async Task AddAttachmentAsync(Attachment attachment)
+    {
+        await _context.Attachments.AddAsync(attachment);
+    }
+
+    public async Task<Attachment> GetAttachmentByIdAsync(Guid id)
+    {
+        return await _context.Attachments.FindAsync(id);
+    }
+
+    public void RemoveAttachment(Attachment attachment)
+    {
+        _context.Attachments.Remove(attachment);
     }
 
     public async Task<bool> AssignUserAsync(Guid bugId, Guid userId)
@@ -34,7 +100,6 @@ public class BugRepository : IBugRepository
             User = user
         });
         return true;
-
     }
 
     public async Task<List<Bug>> GetAll()

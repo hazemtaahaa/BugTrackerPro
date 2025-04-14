@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BugTrackerPro.BL\BugTrackerPro.BL.csproj" />
     <ProjectReference Include="..\BugTrackerPro.DAL\BugTrackerPro.DAL.csproj" />
   </ItemGroup>
 
